@@ -129,3 +129,156 @@
   font-family: monospace;
   background-repeat: no-repeat;
 }
+
+.login-sidebar {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0px 0 4px 1px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  width: 440px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.98;
+  filter: grayscale(10%);
+  transition: 0.32s ease;
+  border-radius: 2px;
+  background: #f8f8f8;
+  font-weight: lighter;
+  z-index: 2;
+  transform: translateX(103%);
+  padding: 70px 40px 24px;
+}
+
+.login-sidebar.active {
+  transform: translateX(0%);
+}
+
+.close-login {
+  transition: 0.3s ease;
+}
+
+.close-login:hover {
+  transform: rotate(-90deg);
+}
+
+.full-height {
+  height: 100%;
+  overflow: auto;
+}
+
+.scroll {
+  overflow: auto;
+}
+
+.login-header {
+  font-size: 36px;
+  padding-bottom: 32px;
+  color: #383c50;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 27px;
+  height: 36px;
+  font-weight: normal;
+}
+
+.input input {
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  outline: none;
+  color: #444;
+  background: #fff;
+  padding: 3px 10px;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  transition: 0.35s ease;
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0);
+}
+
+.input input:hover,
+.input input:focus {
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.login-btn {
+  color: #0039ff;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 0.2s ease;
+  margin-bottom: 32px;
+  font-weight: normal;
+  font-size: 18px;
+  margin-top: 10px;
+  border: 1px solid #0039ff;
+  background: #fbfbfb;
+}
+
+.login-btn:hover {
+  text-shadow: 0.2px 0;
+  transform: scale(1.04);
+}
+
+.forgot-password {
+  font-weight: normal;
+  font-size: 15px;
+  margin: 6px 0;
+  cursor: pointer;
+  color: #383c50;
+  transition: 0.3s ease;
+}
+
+.forgot-password:hover {
+  letter-spacing: 1px;
+}
+
+.bold {
+  font-weight: normal;
+  transition: 0.2s ease;
+}
+
+.bold:hover {
+  text-shadow: 0.2px 0;
+}
+
+.small-text {
+  font-size: 12px;
+  padding: 5px 0;
+}
+
+.bottom-links-wrap {
+  margin-top: 27px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.overlay-bg {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 1;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+
+.active.overlay-bg {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cross-btn {
+  position: absolute;
+  top: 29px;
+  right: 36px;
+}
