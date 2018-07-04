@@ -8,7 +8,7 @@
       </div>
       <div class='header-links'> Contact Us
       </div>
-      <div class='header-links blue-txt' (click)='sidebarActive=true;'> Login
+      <div class='header-links blue-txt' (click)='sidebarState=1;'> Login
       </div>
     </div>
   </header>
@@ -31,28 +31,74 @@
       </div>
     </footer>
   </div>
-  <div class='absolute login-sidebar flex flex-col flex-center' [class.active]='sidebarActive == true'>
-    <div class='flex flex-end cross-btn'>
-      <img class='pointer close-login' height='32px' width='32px' src='assets/icon/cross-red.svg' (click)='sidebarActive=false;'>
+  <div class='absolute login-sidebar flex flex-col flex-center' [class.active]='sidebarState >= 1'>
+    <div class='absolute flex flex-col flex-center front-face' [class.flip]='sidebarState>=2'>
+      <div class='flex flex-end cross-btn' *ngIf='sidebarState==1' (click)='sidebarState=0;'>
+        <img class='pointer close-login' height='32px' width='32px' src='assets/icon/cross-red.svg'>
+      </div>
+      <div class='flex flex-col flex-align-center scroll'>
+        <div class='login-header'> LOGIN
+        </div>
+        <div class='input'>
+          <input type='text' placeholder='Email'>
+        </div>
+        <div class='input'>
+          <input type='password' placeholder='Password'>
+        </div>
+        <div class='login-btn'> Login
+        </div>
+        <div class='forgot-password' (click)='sidebarState=2'> Create an account </div>
+        <div class='forgot-password' (click)='sidebarState=3'> Forgot Password? </div>
+        <div class='bottom-links-wrap flex flex-align-center flex-col flex-center'>
+          <div class='small-text'> By logging in, you agree to our</div>
+          <div class='small-text'><span class='bold pointer'>Terms & Conditions</span> and <span class='bold pointer'>Privacy Policy</span></div>
+        </div>
+      </div>
     </div>
-    <div class='flex flex-col flex-align-center scroll'>
-      <div class='login-header'> LOGIN
+    <div class='absolute flex flex-col flex-center back-face' [class.flip]='sidebarState>=2'>
+      <div class='flex back-btn' *ngIf='sidebarState>=2' (click)='sidebarState=1'>
+        <img class='pointer' height='30px' width='30px' src='assets/icon/back-arrow.svg'>
       </div>
-      <div class='input'>
-        <input type='text' placeholder='Email'>
+      <div *ngIf='sidebarState==2'>
+        <div class='flex flex-col flex-align-center scroll'>
+          <div class='login-header'> CREATE AN ACCOUNT
+          </div>
+          <div class='input'>
+            <input type='text' placeholder='First Name'>
+          </div>
+          <div class='input'>
+            <input type='text' placeholder='Last Name'>
+          </div>
+          <div class='input'>
+            <input type='text' placeholder='Email'>
+          </div>
+          <div class='input'>
+            <input type='text' placeholder='Contact Number'>
+          </div>
+          <div class='login-btn'> Create
+          </div>
+        </div>
       </div>
-      <div class='input'>
-        <input type='password' placeholder='Password'>
+      <div *ngIf='sidebarState==3'>
+        <div class='flex flex-col flex-align-center scroll'>
+          <div class='login-header'> FORGOT PASSWORD
+          </div>
+          <div class='input'>
+            <input type='text' placeholder='Enter Email'>
+          </div>
+          <div class='input'>
+            <input type='password' placeholder='Enter Password'>
+          </div>
+          <div class='input'>
+            <input type='password' placeholder='Re Enter Password'>
+          </div>
+          <div class='login-btn'> Submit
+          </div>
+        </div>
       </div>
-      <div class='login-btn'> Login
-      </div>
-      <div class='forgot-password'> Forgot Password? </div>
-      <div class='forgot-password'> Create an account </div>
-      <div class='bottom-links-wrap flex flex-align-center flex-col flex-center'>
-        <div class='small-text'> By logging in, you agree to our</div>
-        <div class='small-text'><span class='bold pointer'>Terms & Conditions</span> and <span class='bold pointer'>Privacy Policy</span></div>
+      <div>
       </div>
     </div>
   </div>
-  <div class='fixed overlay-bg' [class.active]='sidebarActive == true' (click)='sidebarActive=false;'></div>
+  <div class='fixed overlay-bg' [class.active]='sidebarState >= 1' (click)='sidebarState=0;'></div>
 </div>

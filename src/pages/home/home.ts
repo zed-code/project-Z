@@ -8,6 +8,7 @@ import { NavController } from 'ionic-angular';
 export class HomePage implements OnInit, OnDestroy {
 
   currentYear: any;
+  sidebarState = 0;
 
   constructor(public navCtrl: NavController) {
 
@@ -19,7 +20,7 @@ export class HomePage implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-  	
+
   }
 
 }
