@@ -2,11 +2,11 @@
   <header class='header flex flex-align-center flex-between'>
     <img height='32px' src='assets/icon/portal-logo.png'>
     <div class='flex flex-align-center header-links-wrap'>
-      <div class='header-links'> Courses
+      <div class='header-links' (click)="scrollTo('_courses')"> Courses
       </div>
-      <div class='header-links'> About Us
+      <div class='header-links' (click)="scrollTo('_about')"> About Us
       </div>
-      <div class='header-links'> Contact Us
+      <div class='header-links' (click)="scrollTo('_contact')"> Contact Us
       </div>
       <div class='header-links blue-txt' (click)='sidebarState=1;'> Login
       </div>
@@ -22,7 +22,7 @@
     </section>
     <section class='mid-section flex flex-center flex-align-center'> We offer courses
     </section>
-    <section class='flex flex-center flex-col students-wrap'>
+    <section class='flex flex-center flex-col students-wrap' id='_courses'>
       <div>
         <div class='header-txt'> Free classes </div>
         <div class='header-txt'> for enthusiastic students
@@ -39,14 +39,14 @@
     </section>
     <section class='mid-section flex flex-center flex-align-center'> Employee on Job Service
     </section>
-    <section class='flex flex-center flex-col students-wrap about-wrap'>
+    <section class='flex flex-center flex-col students-wrap about-wrap' id='_about'>
       <div>
         <div class='header-txt center'> About Us </div>
         <div class='about-desc'> We are a company with lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel arcu dignissim augue consequat fermentum. Sed aliquam quis nulla nec tempor. Fusce magna orci, cursus eu urna nec, ultricies venenatis ex. Maecenas tempus pharetra risus, eu porta arcu gravida vitae. Donec accumsan gravida leo eget lacinia. Vivamus eu tristique lorem, sed tincidunt velit. Aliquam malesuada neque et sapien malesuada placerat nec ut libero. Nullam egestas elementum tincidunt. In mattis ex eu nunc fringilla, at ornare ligula viverra. Mauris quis nibh eu massa mollis accumsan. Maecenas diam ipsum, eleifend et lacinia eu, venenatis sed ipsum.
         </div>
       </div>
     </section>
-    <footer class="page-footer flex flex-align-center flex-between">
+    <footer class="page-footer flex flex-align-center flex-between" id='_contact'>
       <div class="small-text"> Copyright © {{currentYear}} Portal, Inc. </div>
       <div>
         <a target="_blank"><img src="assets/icon/instagram-footer.svg" class="footer-logo-right"></a>

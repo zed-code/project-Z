@@ -411,4 +411,7 @@
   column-gap: 60px;
   margin: auto;
   max-width: 1000px;
+  @media screen and (max-width: 767px) {
+    column-count: 1;
+  }
 }

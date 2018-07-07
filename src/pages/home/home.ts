@@ -24,6 +24,11 @@ export class HomePage implements OnInit, OnDestroy {
   	this.currentYear = date.getFullYear();
   }
 
+  scrollTo(id) {
+  	const ele = document.getElementById(id);
+  	ele.scrollIntoView({ behavior: 'smooth' });
+  }
+
   ngOnDestroy() {
 
   }
