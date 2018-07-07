@@ -13,14 +13,38 @@
     </div>
   </header>
   <div class='body-content relative flex flex-col'>
-    <section class='top-section flex flex-col flex-align-center'>
+    <section class='top-section flex flex-col flex-align-center fixed-bg'>
       <div class='top-section-txt-wrap flex flex-col flex-center'>
         <div class='header-txt'>Explore your Potential</div>
         <div class='header-txt'>Get Expertised </div>
         <div class='header-txt'>Reach your limits</div>
       </div>
     </section>
-    <section class='mid-section flex flex-center flex-align-center'> We offer courses for
+    <section class='mid-section flex flex-center flex-align-center'> We offer courses
+    </section>
+    <section class='flex flex-center flex-col students-wrap'>
+      <div>
+        <div class='header-txt'> Free classes </div>
+        <div class='header-txt'> for enthusiastic students
+        </div>
+      </div>
+    </section>
+    <section class='mid-section flex flex-center flex-align-center'> Live Projects & Workshops
+    </section>
+    <section class='top-section flex flex-col flex-align-center professional-wrap'>
+      <div class='top-section-txt-wrap flex flex-col flex-center'>
+        <div class='header-txt'>Professional courses</div>
+        <div class='header-txt'>to enhance your skills </div>
+      </div>
+    </section>
+    <section class='mid-section flex flex-center flex-align-center'> Employee on Job Service
+    </section>
+    <section class='flex flex-center flex-col students-wrap about-wrap'>
+      <div>
+        <div class='header-txt center'> About Us </div>
+        <div class='about-desc'> We are a company with lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel arcu dignissim augue consequat fermentum. Sed aliquam quis nulla nec tempor. Fusce magna orci, cursus eu urna nec, ultricies venenatis ex. Maecenas tempus pharetra risus, eu porta arcu gravida vitae. Donec accumsan gravida leo eget lacinia. Vivamus eu tristique lorem, sed tincidunt velit. Aliquam malesuada neque et sapien malesuada placerat nec ut libero. Nullam egestas elementum tincidunt. In mattis ex eu nunc fringilla, at ornare ligula viverra. Mauris quis nibh eu massa mollis accumsan. Maecenas diam ipsum, eleifend et lacinia eu, venenatis sed ipsum.
+        </div>
+      </div>
     </section>
     <footer class="page-footer flex flex-align-center flex-between">
       <div class="small-text"> Copyright © {{currentYear}} Portal, Inc. </div>
@@ -51,7 +75,7 @@
         <div class='forgot-password' (click)='sidebarState=3'> Forgot Password? </div>
         <div class='bottom-links-wrap flex flex-align-center flex-col flex-center'>
           <div class='small-text'> By logging in, you agree to our</div>
-          <div class='small-text'><span class='bold pointer'>Terms & Conditions</span> and <span class='bold pointer'>Privacy Policy</span></div>
+          <div class='small-text'><span (click)="popup='Terms and Conditions'; sidebarState = -1; " class='bold pointer'>Terms & Conditions</span> and <span class='bold pointer' (click)="popup='Privacy Policy'; sidebarState = -2; ">Privacy Policy</span></div>
         </div>
       </div>
     </div>
@@ -75,6 +99,12 @@
           <div class='input'>
             <input type='text' placeholder='Contact Number'>
           </div>
+          <div class='input'>
+            <input type='password' placeholder='Password'>
+          </div>
+          <div class='input'>
+            <input type='password' placeholder='Re Enter Password'>
+          </div>
           <div class='login-btn'> Create
           </div>
         </div>
@@ -86,12 +116,6 @@
           <div class='input'>
             <input type='text' placeholder='Enter Email'>
           </div>
-          <div class='input'>
-            <input type='password' placeholder='Enter Password'>
-          </div>
-          <div class='input'>
-            <input type='password' placeholder='Re Enter Password'>
-          </div>
           <div class='login-btn'> Submit
           </div>
         </div>
@@ -100,5 +124,13 @@
       </div>
     </div>
   </div>
-  <div class='fixed overlay-bg' [class.active]='sidebarState >= 1' (click)='sidebarState=0;'></div>
+  <div class='fixed overlay-bg' [class.active]='sidebarState' (click)='sidebarState=0;'></div>
+</div>
+<div class="fixed privacy-popup flex flex-col" *ngIf='sidebarState<0'>
+  <div class="popup-header flex flex-between flex-align-center">
+    <div>{{popup}}</div>
+    <img (click)='sidebarState=0' class='pointer close-login' height='25px' width='25px' src='assets/icon/cross-white.svg'>
+  </div>
+  <div class='flex flex-col privacy-content'> {{popupText[popup]}}
+  </div>
 </div>

@@ -16,7 +16,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 1px;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .header-links-wrap {
@@ -72,16 +72,25 @@
 
 .top-section {
   position: relative;
-  color: #fff;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
   background: url(../assets/icon/circuit.jpg) no-repeat;
   min-height: 70vh;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   color: #fff;
+  &.professional-wrap {
+    background: url(../assets/imgs/blur.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.fixed-bg {
+  background-attachment: fixed;
+  @media screen and (max-width: 767px) {
+    background-attachment: intial;
+    background-attachment: scroll;
+  }
 }
 
 .green-txt {
@@ -102,7 +111,7 @@
 .top-section-txt-wrap {
   width: 100%;
   padding: 5%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
   flex-grow: 1;
 }
 
@@ -126,8 +135,7 @@
   background: url(../assets/imgs/header-background.png);
   background-size: cover;
   background-position: center;
-  font-size: 30px;
-  font-family: monospace;
+  font-size: 32px;
   background-repeat: no-repeat;
 }
 
@@ -313,6 +321,7 @@
 
 .front-face.flip {
   transform: rotateY(180deg);
+  z-index: 10;
 }
 
 .back-face {
@@ -327,4 +336,79 @@
 
 .back-face.flip {
   transform: rotateY(0deg);
+  z-index: 10;
+}
+
+.privacy-popup {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 70vw;
+  margin: auto;
+  height: 70vh;
+  z-index: 6;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+  max-width: 1080px;
+  max-height: 767px;
+}
+
+.popup-header {
+  min-height: 52px;
+  background: #132790;
+  color: #fff;
+  font-size: 17px;
+  padding: 12px 12px 12px 20px;
+}
+
+.privacy-content {
+  flex-grow: 1;
+  overflow: auto;
+  padding: 30px;
+  font-family: sans-serif;
+  white-space: pre-line;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  font-size: 13px;
+}
+
+.students-wrap {
+  position: relative;
+  color: #fff;
+  flex-shrink: 0;
+  background: url(../assets/imgs/denim.jpg) no-repeat;
+  min-height: 70vh;
+  &.professional-wrap {
+    background: url(../assets/imgs/bottle.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &.about-wrap {
+    background: url(../assets/imgs/shaded.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+    .header-txt {
+      font-style: inherit;
+      font-style: initial;
+      font-family: sans-serif;
+    }
+  }
+  background-size: cover;
+  padding: 5%;
+  background-position: center;
+}
+
+.about-desc {
+  font-size: 17px;
+  line-height: 1.5;
+  padding: 10px 24px 32px;
+  text-align: justify;
+  column-count: 2;
+  column-gap: 60px;
+  margin: auto;
+  max-width: 1000px;
 }
