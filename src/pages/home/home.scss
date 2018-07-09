@@ -73,8 +73,8 @@
 .top-section {
   position: relative;
   flex-shrink: 0;
-  background: url(../assets/icon/circuit.jpg) no-repeat;
-  min-height: 70vh;
+  background: url(../assets/imgs/circuit.jpg) no-repeat;
+  min-height: 66vh;
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -99,7 +99,7 @@
 }
 
 .blue-txt {
-  color: #0039ff;
+  color: #3F51B5;
   text-shadow: 0.1px 0;
 }
 
@@ -111,19 +111,23 @@
 .top-section-txt-wrap {
   width: 100%;
   padding: 5%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(1, 74, 124, 0.9);
   flex-grow: 1;
+}
+
+.professional-wrap .top-section-txt-wrap {
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .header-txt {
   padding: 32px 18px;
   font-size: 36px;
-  font-style: italic;
   letter-spacing: 1px;
   color: #fff;
+  flex-shrink: 0;
   text-shadow: 1px 1px rgba(55, 55, 55, 0.8);
   text-transform: capitalize;
-  font-family: monospace;
+  font-family: sans-serif;
 }
 
 .mid-section {
@@ -131,7 +135,7 @@
   min-height: 25vh;
   padding: 5%;
   text-align: center;
-  color: #0039ff;
+  color: #3F51B5;
   background: url(../assets/imgs/header-background.png);
   background-size: cover;
   background-position: center;
@@ -217,7 +221,7 @@
 }
 
 .login-btn {
-  color: #0039ff;
+  color: #3F51B5;
   padding: 8px 12px;
   cursor: pointer;
   border-radius: 3px;
@@ -226,7 +230,7 @@
   font-weight: normal;
   font-size: 18px;
   margin-top: 10px;
-  border: 1px solid #0039ff;
+  border: 1px solid #3F51B5;
   background: #fbfbfb;
 }
 
@@ -242,7 +246,7 @@
   cursor: pointer;
   color: #383c50;
   transition: 0.3s ease;
-  border-bottom: 0.5px solid #0039ffaa;
+  border-bottom: 0.5px solid #3F51B5AA;
   padding-bottom: 1px;
 }
 
@@ -280,7 +284,7 @@
   bottom: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   pointer-events: none;
   z-index: 1;
   transition: 0.3s ease;
@@ -413,5 +417,34 @@
   max-width: 1000px;
   @media screen and (max-width: 767px) {
     column-count: 1;
+  }
+}
+
+.working-img {
+  height: 24vh;
+}
+
+.student-img {
+  animation: bounce 2.4s infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.transition {
+  transition: 0.35s ease;
+  .header-txt {
+    font-size: 40px;
   }
 }

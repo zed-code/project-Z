@@ -28,6 +28,10 @@
   text-overflow: ellipsis;
 }
 
+.hide-overflow {
+  overflow: hidden;
+}
+
 .no-shrink {
   flex-shrink: 0;
 }
@@ -198,3 +202,7 @@ loader {
   background-color: transparent!important;
 }
 
+::selection {
+  background: #222;
+  color: #fff;
+}

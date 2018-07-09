@@ -13,31 +13,41 @@
     </div>
   </header>
   <div class='body-content relative flex flex-col'>
-    <section class='top-section flex flex-col flex-align-center fixed-bg'>
-      <div class='top-section-txt-wrap flex flex-col flex-center'>
-        <div class='header-txt'>Explore your Potential</div>
-        <div class='header-txt'>Get Expertised </div>
-        <div class='header-txt'>Reach your limits</div>
-      </div>
-    </section>
-    <section class='mid-section flex flex-center flex-align-center'> We offer courses
-    </section>
-    <section class='flex flex-center flex-col students-wrap' id='_courses'>
-      <div>
-        <div class='header-txt'> Free classes </div>
-        <div class='header-txt'> for enthusiastic students
+    <section class='top-section flex flex-col flex-align-center fixed-bg' id='_top'>
+      <div class='top-section-txt-wrap flex flex-col flex-center no-padding hide-overflow'>
+        <div class='flex flex-align-center transition' [ngStyle]="{'transform': 'translateX(' + -100 * percent + '%)'}">
+          <div class='header-txt full-width center'>Explore your Potential</div>
+          <div class='header-txt full-width center'>Get Expertised </div>
+          <div class='header-txt full-width center'>Reach your limits</div>
         </div>
       </div>
     </section>
-    <section class='mid-section flex flex-center flex-align-center'> Live Projects & Workshops
+    <section class='mid-section flex flex-center flex-align-center'> We offer diverse courses
     </section>
-    <section class='top-section flex flex-col flex-align-center professional-wrap'>
-      <div class='top-section-txt-wrap flex flex-col flex-center'>
-        <div class='header-txt'>Professional courses</div>
-        <div class='header-txt'>to enhance your skills </div>
+    <section class='flex flex-align-center students-wrap' id='_courses'>
+      <div class='full-width'>
+        <div class='header-txt'> Conduct Free classes </div>
+        <div class='header-txt'> for enthusiastic students
+        </div>
+      </div>
+      <div>
+        <img class='student-img' src='assets/icon/student.png'>
       </div>
     </section>
-    <section class='mid-section flex flex-center flex-align-center'> Employee on Job Service
+    <section class='mid-section flex flex-center flex-align-center'> Enroll in our Live Projects & Workshops
+    </section>
+    <section class='top-section flex flex-col flex-align-center professional-wrap'>
+      <div class='top-section-txt-wrap flex flex-align-center'>
+        <div class="full-width">
+          <div class='header-txt'>Varied Professional courses</div>
+          <div class='header-txt'>to enhance your skills </div>
+        </div>
+        <div>
+          <img class='working-img' src="assets/icon/working.gif">
+        </div>
+      </div>
+    </section>
+    <section class='mid-section flex flex-center flex-align-center'> Provision of Employee on Job Service
     </section>
     <section class='flex flex-center flex-col students-wrap about-wrap' id='_about'>
       <div>
