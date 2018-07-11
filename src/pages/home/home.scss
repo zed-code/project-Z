@@ -6,13 +6,12 @@
 
 .header {
   min-height: 90px;
-  background-color: #fff;
+  background-color: #fdfdfd;
   box-shadow: 0 0 4px 0px rgba(0, 0, 15, 0.2);
   color: #444;
   padding: 10px 32px 10px 25px;
   flex-shrink: 0;
-  border-radius: 3px;
-  background: url(../assets/imgs/header-background.png);
+  border-radius: 3px; // background: url(../assets/imgs/header-background.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -70,29 +69,6 @@
   text-shadow: 0.2px 0;
 }
 
-.top-section {
-  position: relative;
-  flex-shrink: 0;
-  background: url(../assets/imgs/circuit.jpg) no-repeat;
-  min-height: 66vh;
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  &.professional-wrap {
-    background: url(../assets/imgs/blur.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-.fixed-bg {
-  background-attachment: fixed;
-  @media screen and (max-width: 767px) {
-    background-attachment: intial;
-    background-attachment: scroll;
-  }
-}
-
 .green-txt {
   color: #49b327;
   text-shadow: 0.1px 0;
@@ -119,6 +95,10 @@
   background: rgba(0, 0, 0, 0.45);
 }
 
+.students-wrap .top-section-txt-wrap {
+  background: rgba(47, 100, 69, 0.3)
+}
+
 .header-txt {
   padding: 32px 18px;
   font-size: 36px;
@@ -126,8 +106,8 @@
   color: #fff;
   flex-shrink: 0;
   text-shadow: 1px 1px rgba(55, 55, 55, 0.8);
-  text-transform: capitalize;
   font-family: sans-serif;
+  line-height: 1.2;
 }
 
 .mid-section {
@@ -244,7 +224,7 @@
   font-size: 15px;
   margin: 6px 0;
   cursor: pointer;
-  color: #383c50;
+  color: #4659ba;
   transition: 0.3s ease;
   border-bottom: 0.5px solid #3F51B5AA;
   padding-bottom: 1px;
@@ -284,7 +264,7 @@
   bottom: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.45);
   pointer-events: none;
   z-index: 1;
   transition: 0.3s ease;
@@ -312,6 +292,12 @@
 
 .back-btn:hover {
   transform: rotate(180deg) translateX(3px);
+}
+
+.header-desc {
+  padding: 14px 5% 32px;
+  line-height: 1.5;
+  font-size: 17px;
 }
 
 .front-face {
@@ -374,6 +360,7 @@
   padding: 30px;
   font-family: sans-serif;
   white-space: pre-line;
+  text-align: justify;
   line-height: 1.4;
   letter-spacing: 0.2px;
   font-size: 13px;
@@ -385,11 +372,6 @@
   flex-shrink: 0;
   background: url(../assets/imgs/denim.jpg) no-repeat;
   min-height: 70vh;
-  &.professional-wrap {
-    background: url(../assets/imgs/bottle.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
   &.about-wrap {
     background: url(../assets/imgs/shaded.jpg) no-repeat;
     background-size: cover;
@@ -402,8 +384,11 @@
     }
   }
   background-size: cover;
-  padding: 5%;
   background-position: center;
+  .header-desc {
+    padding: 0px 18px 32px;
+    text-shadow: 0.2px 0.2px #888;
+  }
 }
 
 .about-desc {
@@ -430,7 +415,8 @@
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -446,5 +432,31 @@
   transition: 0.35s ease;
   .header-txt {
     font-size: 40px;
+  }
+}
+
+.top-section {
+  position: relative;
+  flex-shrink: 0;
+  background: url(../assets/imgs/circuit.jpg) no-repeat;
+  min-height: 66vh;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  &.professional-wrap {
+    background: url(../assets/imgs/blur.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    .header-desc {
+      padding: 0px 18px 32px;
+    }
+  }
+}
+
+.fixed-bg {
+  background-attachment: fixed;
+  @media screen and (max-width: 767px) {
+    background-attachment: intial;
+    background-attachment: scroll;
   }
 }
