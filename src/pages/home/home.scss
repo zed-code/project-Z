@@ -298,6 +298,7 @@
   padding: 14px 5% 32px;
   line-height: 1.5;
   font-size: 17px;
+  // text-align: justify;
 }
 
 .front-face {
@@ -336,7 +337,7 @@
   bottom: 0;
   width: 70vw;
   margin: auto;
-  height: 70vh;
+  height: 66vh;
   z-index: 6;
   background: #fff;
   overflow: hidden;
@@ -371,12 +372,12 @@
   color: #fff;
   flex-shrink: 0;
   background: url(../assets/imgs/denim.jpg) no-repeat;
-  min-height: 70vh;
+  min-height: 66vh;
   &.about-wrap {
     background: url(../assets/imgs/shaded.jpg) no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 50vh;
+    min-height: 60vh;
     .header-txt {
       font-style: inherit;
       font-style: initial;
@@ -394,7 +395,7 @@
 .about-desc {
   font-size: 17px;
   line-height: 1.5;
-  padding: 10px 24px 32px;
+  padding: 10px 36px 36px;
   text-align: justify;
   column-count: 2;
   column-gap: 60px;
@@ -459,4 +460,65 @@
     background-attachment: intial;
     background-attachment: scroll;
   }
+}
+
+.contact-us {
+  position: relative;
+  flex-shrink: 0;
+  background: url(../assets/imgs/white-texture.jpg);
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  color: #3F51B5;
+  .top-section-txt-wrap {
+    background: rgba(0, 0, 0, 0.0);
+  }
+  .header-txt {
+    color: #3F51B5;
+    text-align: center;
+    text-shadow: none;
+  }
+}
+
+.contact-title {
+  font-weight: normal;
+  text-shadow: 0.2px 0;
+  font-size: 17px;
+  padding-right: 16px;
+  white-space: nowrap;
+}
+
+.contact-wrap {
+  padding: 4px 20px 4px;
+  max-width: 534px;
+  margin: 6px auto 32px;
+  border-radius: 4px;
+  background: rgba(88, 104, 140, 0.12);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.each-contact {
+  padding: 12px 0;
+}
+
+.contact-info {
+  line-height: 1.5;
+  font-size: 18px;
+  text-align: right;
+}
+
+.email-us.contact-info {
+  text-shadow: 0.2px 0;
+  transition: 0.2s ease;
+  font-weight: normal;
+  border-bottom: 1px solid #3F51B500;
+  cursor: pointer;
+  line-height: 1.4;
+  color: #3F51B5;
+  text-decoration: none;
+}
+
+.email-us.contact-info:hover {
+  border-bottom: 1px solid #3F51B5;
+  opacity: 1;
 }

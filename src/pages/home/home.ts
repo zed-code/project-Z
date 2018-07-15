@@ -38,7 +38,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   scrollTo(id) {
   	const ele = document.getElementById(id);
-  	ele.scrollIntoView({ behavior: 'smooth' });
+  	ele.scrollIntoView({ behavior: 'smooth', block: 'start'});
   }
 
   ngOnDestroy() {
