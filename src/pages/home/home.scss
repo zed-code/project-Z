@@ -2,6 +2,7 @@
   height: 100vh;
   width: 100vw;
   perspective: 1000;
+  overflow-x: hidden;
 }
 
 .header {
@@ -11,7 +12,7 @@
   color: #444;
   padding: 10px 32px 10px 25px;
   flex-shrink: 0;
-  border-radius: 3px; // background: url(../assets/imgs/header-background.png);
+  border-radius: 3px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,6 +42,7 @@
 .body-content {
   height: 100%;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 .page-footer {
@@ -96,7 +98,7 @@
 }
 
 .students-wrap .top-section-txt-wrap {
-  background: rgba(47, 100, 69, 0.3)
+  background: rgba(47, 100, 69, 0.5)
 }
 
 .header-txt {
@@ -408,6 +410,7 @@
 .working-img {
   height: 24vh;
   min-width: 100px;
+  margin-bottom: 40px;
 }
 
 .student-img {
