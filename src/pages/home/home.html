@@ -1,6 +1,9 @@
 <div class='flex flex-col body-wrapper relative'>
   <header class='header flex flex-align-center flex-between'>
-    <img height='32px' src='assets/icon/portal-logo.png'>
+    <!-- <img height='32px' src='assets/icon/portal-logo.png'> -->
+    <div class='header-logo'>
+      <span class='green-txt'>Learn</span><span class='dark-grey'>Skills</span>
+    </div>
     <div class='flex flex-align-center header-links-wrap'>
       <div class='header-links' (click)="scrollTo('_courses')"> Courses
       </div>
@@ -15,17 +18,23 @@
   <div class='body-content relative flex flex-col'>
     <section class='top-section flex flex-col flex-align-center fixed-bg' id='_top'>
       <div class='top-section-txt-wrap flex flex-col flex-center no-padding hide-overflow'>
-        <div class='flex flex-align-center transition' [ngStyle]="{'transform': 'translateX(' + -100 * percent + '%)'}">
-          <div class='header-txt full-width center'>Explore Your Potential</div>
-          <div class='header-txt full-width center'>Get Expertised </div>
-          <div class='header-txt full-width center'>Reach Your limits</div>
+        <div class='relative'>
+          <div class='absolute left-chevron' (click)="carouselShift('left')">
+            <img src='assets/icon/chevron-white.svg'>
+          </div>
+          <div class='absolute right-chevron' (click)="carouselShift('right')">
+            <img src='assets/icon/chevron-white.svg'>
+          </div>
+          <div class='flex flex-align-center transition' [ngStyle]="{'transform': 'translateX(' + -100 * percent + '%)'}">
+            <div class='header-txt full-width center' *ngFor='let text of headerTexts'>{{text}}</div>
+          </div>
         </div>
         <div class='header-desc center'>Explore the lorem ipsum of magna orci, cursus eu urna nec, ultricies venenatis ex. Maecenas tempus pharetra risus, eu porta arcu gravida vitae. Donec accumsan gravida leo eget lacinia. Vivamus eu tristique lorem, sed tincidunt velit. Aliquam malesuada neque et sapien malesuada placerat nec ut libero.</div>
       </div>
     </section>
-    <section class='mid-section flex flex-center flex-align-center'> We offer diverse courses
+    <section class='mid-section flex flex-center flex-align-center' id='_courses'> We offer diverse courses
     </section>
-    <section class='flex flex-col flex-align-center students-wrap' id='_courses'>
+    <section class='flex flex-col flex-align-center students-wrap'>
       <div class='top-section-txt-wrap flex flex-align-center'>
         <div class='full-width'>
           <div class='header-txt'> Conduct free classes for enthusiastic students </div>
@@ -40,12 +49,12 @@
     </section>
     <section class='top-section flex flex-col flex-align-center professional-wrap'>
       <div class='top-section-txt-wrap flex flex-align-center'>
+        <div>
+          <img class='working-img' src="assets/icon/working.gif">
+        </div>
         <div class="full-width">
           <div class='header-txt'>Varied professional courses to enhance your skills</div>
           <div class='header-desc'>Explore the lorem ipsum of magna orci, cursus eu urna nec, ultricies venenatis ex. Maecenas tempus pharetra risus, eu porta arcu gravida vitae. Donec accumsan gravida leo eget lacinia. Vivamus eu tristique lorem, sed tincidunt velit. Aliquam malesuada neque et sapien malesuada placerat nec ut libero. Nullam egestas elementum tincidunt. In mattis ex eu nunc fringilla, at ornare ligula viverra. Mauris quis nibh eu massa mollis accumsan.</div>
-        </div>
-        <div>
-          <img class='working-img' src="assets/icon/working.gif">
         </div>
       </div>
     </section>
@@ -129,10 +138,7 @@
           <div class='login-header'> CREATE AN ACCOUNT
           </div>
           <div class='input'>
-            <input type='text' placeholder='First Name'>
-          </div>
-          <div class='input'>
-            <input type='text' placeholder='Last Name'>
+            <input type='text' placeholder='Full Name'>
           </div>
           <div class='input'>
             <input type='text' placeholder='Email'>
@@ -142,9 +148,6 @@
           </div>
           <div class='input'>
             <input type='password' placeholder='Password'>
-          </div>
-          <div class='input'>
-            <input type='password' placeholder='Re Enter Password'>
           </div>
           <div class='login-btn'> Create
           </div>

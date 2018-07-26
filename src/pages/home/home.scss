@@ -6,7 +6,7 @@
 }
 
 .header {
-  min-height: 90px;
+  min-height: 72px;
   background-color: #fdfdfd;
   box-shadow: 0 0 4px 0px rgba(0, 0, 15, 0.2);
   color: #444;
@@ -114,7 +114,7 @@
 
 .mid-section {
   background: #fff;
-  min-height: 25vh;
+  min-height: 17vh;
   padding: 5%;
   text-align: center;
   color: #3F51B5;
@@ -373,7 +373,7 @@
   color: #fff;
   flex-shrink: 0;
   background: url(../assets/imgs/denim.jpg) no-repeat;
-  min-height: 66vh;
+  min-height: 63vh;
   &.about-wrap {
     background: url(../assets/imgs/shaded.jpg) no-repeat;
     background-size: cover;
@@ -396,7 +396,7 @@
 .about-desc {
   font-size: 17px;
   line-height: 1.5;
-  padding: 10px 36px 36px;
+  padding: 10px 36px 48px;
   text-align: justify;
   column-count: 2;
   column-gap: 60px;
@@ -444,7 +444,7 @@
   position: relative;
   flex-shrink: 0;
   background: url(../assets/imgs/circuit.jpg) no-repeat;
-  min-height: 66vh;
+  min-height: 63vh;
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -540,4 +540,33 @@
 
 .page-top:hover {
   letter-spacing: 0.5px;
+}
+
+.right-chevron {
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.left-chevron {
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.right-chevron img,
+.left-chevron img {
+  height: 16px;
+  width: 12px;
+}
+
+.header-logo {
+  font-size: 24px;
+  .dark-grey {
+    color: #555;
+  }
 }

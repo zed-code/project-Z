@@ -9,7 +9,8 @@ export class HomePage implements OnInit, OnDestroy {
 
   currentYear: any;
   sidebarState = 0;
-  percent;
+  percent = 0;
+  headerTexts = ['Explore Your Potential', 'Get Expertised', 'Reach Your limits'];
   intervalFn;
 
   popupText = {
@@ -33,12 +34,28 @@ export class HomePage implements OnInit, OnDestroy {
 		    	cnt = 0;
 		    }
 		}
-	}, 2400);
+	}, 7500);
   }
 
   scrollTo(id) {
   	const ele = document.getElementById(id);
   	ele.scrollIntoView({ behavior: 'smooth', block: 'start'});
+  }
+
+  carouselShift(direction) {
+  	if (direction == 'left') {
+  		if ( this.percent != 0) {
+  			this.percent--;
+  		} else {
+  			this.percent = this.headerTexts.length - 1;
+  		}
+  	} else {
+  		if ( this.percent != this.headerTexts.length - 1) {
+  			this.percent++;
+  		} else {
+  			this.percent = 0;
+  		}
+  	}
   }
 
   ngOnDestroy() {
