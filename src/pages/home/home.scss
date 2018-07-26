@@ -417,6 +417,7 @@
   animation: bounce 2.4s infinite;
   animation-timing-function: ease;
   min-width: 100px;
+  max-width: 330px;
 }
 
 @keyframes bounce {
