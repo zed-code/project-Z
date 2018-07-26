@@ -114,7 +114,7 @@
 
 .mid-section {
   background: #fff;
-  min-height: 17vh;
+  min-height: 18vh;
   padding: 5%;
   text-align: center;
   color: #3F51B5;
@@ -171,7 +171,7 @@
 
 .login-header {
   font-size: 36px;
-  padding-bottom: 32px;
+  padding-bottom: 20px;
   color: #383c50;
   text-align: center;
 }
@@ -570,4 +570,24 @@
   .dark-grey {
     color: #555;
   }
+}
+
+.login-as-wrap {
+  margin: 0 14px 24px;
+  cursor: pointer;
+  user-select: none;
+  img {
+    margin-right: 8px;
+    transition: 0.3s ease;
+  }
+}
+
+.login-as-txt {
+  font-size: 20px;
+  line-height: 12px;
+  padding-top: 12px;
+}
+
+.zero-opacity {
+  opacity: 0;
 }

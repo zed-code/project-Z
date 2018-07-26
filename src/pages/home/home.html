@@ -111,7 +111,25 @@
         <img class='pointer close-login' height='32px' width='32px' src='assets/icon/cross-red.svg'>
       </div>
       <div class='flex flex-col flex-align-center scroll'>
-        <div class='login-header'> LOGIN
+        <div class='login-header'> <div>LOGIN</div> <div class='login-as-txt'>as</div>
+        </div>
+        <div class='flex flex-align-center flex-center'>
+          <div class='flex flex-align-center login-as-wrap' (click)="loginAs = 'expert'">
+            <div class='flex-align-center flex'>
+              <img src='assets/icon/selected.svg' *ngIf="loginAs == 'expert'">
+              <img src='assets/icon/unselected.svg' *ngIf="loginAs == 'student'">
+            </div>
+            <div class='selection-txt'> Expert
+            </div>
+          </div>
+          <div class='flex flex-align-center login-as-wrap' (click)="loginAs = 'student'">
+            <div class='flex-align-center flex'>
+              <img src='assets/icon/selected.svg' *ngIf="loginAs == 'student'">
+              <img src='assets/icon/unselected.svg' *ngIf="loginAs == 'expert'">
+            </div>
+            <div class='selection-txt'> Student
+            </div>
+          </div>
         </div>
         <div class='input'>
           <input type='text' placeholder='Email'>
