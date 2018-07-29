@@ -118,7 +118,7 @@
   padding: 5%;
   text-align: center;
   color: #3F51B5;
-  background: url(../assets/imgs/header-background.png);
+  background: url(../assets/images/header-background.png);
   background-size: cover;
   background-position: center;
   font-size: 32px;
@@ -199,6 +199,11 @@
 
 .input input:hover,
 .input input:focus {
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+input:hover,
+input:focus {
   box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -372,10 +377,10 @@
   position: relative;
   color: #fff;
   flex-shrink: 0;
-  background: url(../assets/imgs/denim.jpg) no-repeat;
-  min-height: 63vh;
+  background: url(../assets/images/denim.jpg) no-repeat;
+  min-height: 57vh;
   &.about-wrap {
-    background: url(../assets/imgs/shaded.jpg) no-repeat;
+    background: url(../assets/images/shaded.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     min-height: 60vh;
@@ -444,13 +449,13 @@
 .top-section {
   position: relative;
   flex-shrink: 0;
-  background: url(../assets/imgs/circuit.jpg) no-repeat;
-  min-height: 63vh;
+  background: url(../assets/images/circuit.jpg) no-repeat;
+  min-height: 57vh;
   background-size: cover;
   background-position: center;
   color: #fff;
   &.professional-wrap {
-    background: url(../assets/imgs/blur.jpg) no-repeat;
+    background: url(../assets/images/blur.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     .header-desc {
@@ -470,7 +475,7 @@
 .contact-us {
   position: relative;
   flex-shrink: 0;
-  background: url(../assets/imgs/white-texture.jpg);
+  background: url(../assets/images/white-texture.jpg);
   min-height: 60vh;
   background-size: cover;
   background-position: center;
@@ -567,6 +572,7 @@
 
 .header-logo {
   font-size: 24px;
+  margin-right: 40px;
   .dark-grey {
     color: #555;
   }
@@ -590,4 +596,103 @@
 
 .zero-opacity {
   opacity: 0;
+}
+
+.main-ip {
+  margin: auto;
+  max-width: 530px;
+  min-height: 36px;
+  display: flex;
+  flex-direction: column;
+  input {
+    flex-grow: 1;
+    padding: 4px 12px;
+    border-radius: 2px;
+    border: 1px solid #cecece;
+  }
+}
+
+section.best-selling-courses {
+  min-height: calc(43vh - 72px);
+  padding: 22px 0px;
+  background: rgba(1, 74, 124, 0.12);
+  border: 1px solid #25578120;
+}
+
+.sectional-header {
+  font-size: 18px;
+  color: #3F51B5;
+  padding: 0 36px;
+  text-shadow: 0.2px 0;
+}
+
+.best-courses-wrap {
+  padding: 16px 18px 6px;
+  justify-content: center;
+}
+
+.each-course {
+  width: 33.33%;
+  padding: 6px 18px;
+  max-width: 400px;
+  min-height: 200px;
+}
+
+.courses-container {
+  padding: 12px 16px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  background: rgba(70, 127, 166, 0.8);
+  color: #fff;
+}
+
+.bsc-title {
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 12px;
+  overflow: hidden;
+  font-size: 15px;
+  text-shadow: 0.2px 0 #fff;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.bsc-desc {
+  line-height: 1.5;
+  color: #fff;
+  font-size: 12px;
+  text-shadow: 0.2px 0 #fff;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.bsc-img {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.rating-desc {
+  margin-top: 4px;
+  font-size: 12px;
+  text-shadow: 0.2px 0 #fff;
+}
+
+.bsc-reviews {
+  font-size: 12px;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+  text-shadow: 0.2px 0 #fff;
+}
+
+.user-reviews.courses-container {
+  background: rgba(1, 74, 124, 0.7);
 }

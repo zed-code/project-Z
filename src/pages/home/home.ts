@@ -9,6 +9,7 @@ export class HomePage implements OnInit, OnDestroy {
 
   currentYear: any;
   sidebarState = 0;
+  rate = 4.8;
   percent = 0;
   headerTexts = ['Explore Your Potential', 'Get Expertised', 'Reach Your limits'];
   intervalFn;

@@ -7,6 +7,9 @@ import { LoaderComponent } from '../components/loader/loader';
 import { PortalApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+// ionic2-rating
+import { Ionic2RatingModule } from 'ionic2-rating';
+
 @NgModule({
   declarations: [
     PortalApp,
@@ -15,6 +18,7 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
+    Ionic2RatingModule,
     IonicModule.forRoot(PortalApp)
   ],
   bootstrap: [IonicApp],

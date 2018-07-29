@@ -1,8 +1,13 @@
 <div class='flex flex-col body-wrapper relative'>
   <header class='header flex flex-align-center flex-between'>
     <!-- <img height='32px' src='assets/icon/portal-logo.png'> -->
-    <div class='header-logo'>
-      <span class='green-txt'>Learn</span><span class='dark-grey'>Skills</span>
+    <div class='flex flex-align-center flex-grow'>
+      <div class='header-logo'>
+        <span class='green-txt'>Learn</span><span class='dark-grey'>Skills</span>
+      </div>
+      <div class='flex flex-grow flex-align-center main-ip'>
+        <input type='text' placeholder='Search for courses'>
+      </div>
     </div>
     <div class='flex flex-align-center header-links-wrap'>
       <div class='header-links' (click)="scrollTo('_courses')"> Courses
@@ -30,6 +35,80 @@
           </div>
         </div>
         <div class='header-desc center'>Explore the lorem ipsum of magna orci, cursus eu urna nec, ultricies venenatis ex. Maecenas tempus pharetra risus, eu porta arcu gravida vitae. Donec accumsan gravida leo eget lacinia. Vivamus eu tristique lorem, sed tincidunt velit. Aliquam malesuada neque et sapien malesuada placerat nec ut libero.</div>
+      </div>
+    </section>
+    <section class='flex flex-col best-selling-courses no-shrink'>
+      <div class='sectional-header flex no-shrink'>Best Selling Courses</div>
+      <div class='flex flex-grow best-courses-wrap no-shrink'>
+        <div class='flex flex-col each-course'>
+          <div class='courses-container flex-grow relative star-ratings flex-between flex flex-col'>
+            <div>
+              <div title='Complete Java MasterClass - updated for Java 10' class='bsc-title'> Complete Java MasterClass - updated for Java 10
+              </div>
+              <div class='bsc-desc'> udksvh idf idfji jioj oijg idjov dv djvo dvj ij vkd kfs fisrgh euhfif eri fiuh rfirfh irfji eri jeojf iejr
+              </div>
+            </div>
+            <div class='flex flex-between flex-align-end'>
+              <div>
+                <rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false">
+                </rating>
+                <div class='rating-desc'> 4.7 (3,435 Ratings)
+                </div>
+              </div>
+              <div class='bsc-reviews'> 43 Reviews
+              </div>
+            </div>
+            <div class='absolute bsc-img'>
+              <img src='assets/images/java.jpg'>
+            </div>
+          </div>
+        </div>
+        <div class='flex flex-col each-course'>
+          <div class='courses-container flex-grow relative star-ratings flex-between flex flex-col'>
+            <div>
+              <div title='Complete Java MasterClass - updated for Java 10' class='bsc-title'> Complete Angular MasterClass - updated for Angular 6
+              </div>
+              <div class='bsc-desc'> udksvh idf idfji jioj oijg idjov dv djvo dvj ij vkd kfs fisrgh euhfif eri fiuh rfirfh irfji eri jeojf iejr
+              </div>
+            </div>
+            <div class='flex flex-between flex-align-end'>
+              <div>
+                <rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false">
+                </rating>
+                <div class='rating-desc'> 4.7 (3,435 Ratings)
+                </div>
+              </div>
+              <div class='bsc-reviews'> 43 Reviews
+              </div>
+            </div>
+            <div class='absolute bsc-img'>
+              <img src='assets/images/angular.png'>
+            </div>
+          </div>
+        </div>
+        <div class='flex flex-col each-course'>
+          <div class='courses-container flex-grow relative star-ratings flex-between flex flex-col'>
+            <div>
+              <div title='Complete AWS MasterClass - updated for AWS Cloud' class='bsc-title'> Complete AWS MasterClass - updated for AWS
+              </div>
+              <div class='bsc-desc'> udksvh idf idfji jioj oijg idjov dv djvo dvj ij vkd kfs fisrgh euhfif eri fiuh rfirfh irfji eri jeojf iejr
+              </div>
+            </div>
+            <div class='flex flex-between flex-align-end'>
+              <div>
+                <rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false">
+                </rating>
+                <div class='rating-desc'> 4.7 (3,435 Ratings)
+                </div>
+              </div>
+              <div class='bsc-reviews'> 43 Reviews
+              </div>
+            </div>
+            <div class='absolute bsc-img'>
+              <img src='assets/images/aws.png'>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class='mid-section flex flex-center flex-align-center' id='_courses'> We offer diverse courses
@@ -64,6 +143,74 @@
       <div>
         <div class='header-txt center'> About Us </div>
         <div class='about-desc'> We are a company with lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel arcu dignissim augue consequat fermentum. Sed aliquam quis nulla nec tempor. Fusce magna orci, cursus eu urna nec, ultricies venenatis ex. Maecenas tempus pharetra risus, eu porta arcu gravida vitae. Donec accumsan gravida leo eget lacinia. Vivamus eu tristique lorem, sed tincidunt velit. Aliquam malesuada neque et sapien malesuada placerat nec ut libero. Nullam egestas elementum tincidunt. In mattis ex eu nunc fringilla, at ornare ligula viverra. Mauris quis nibh eu massa mollis accumsan. Maecenas diam ipsum, eleifend et lacinia eu, venenatis sed ipsum. Nullam egestas elementum tincidunt. In mattis ex eu nunc fringilla, at ornare ligula viverra. Mauris quis nibh eu massa mollis accumsan.
+        </div>
+      </div>
+    </section>
+    <section class='flex flex-col best-selling-courses no-shrink'>
+      <div class='sectional-header flex no-shrink'>User Reviews</div>
+      <div class='flex flex-grow best-courses-wrap no-shrink'>
+        <div class='flex flex-col each-course'>
+          <div class='courses-container user-reviews flex-grow relative star-ratings flex-between flex flex-col'>
+            <div>
+              <div title='John Doe' class='bsc-title'> John Doe
+              </div>
+              <div class='bsc-desc'> LearnSkills is an amazing platform with learned and skilled experts readily available for any blockers. The timings are apt in spite of time zone differences with proper planning and educative classes. I'd definitely give a 5 star to LearnSkills.
+              </div>
+            </div>
+            <div class='flex flex-between flex-align-end'>
+              <div>
+                <rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false">
+                </rating>
+                <div class='rating-desc'> Rated 5/5
+                </div>
+              </div>
+            </div>
+            <div class='absolute bsc-img'>
+              <img src='assets/images/review.jpg'>
+            </div>
+          </div>
+        </div>
+        <div class='flex flex-col each-course'>
+          <div class='courses-container user-reviews flex-grow relative star-ratings flex-between flex flex-col'>
+            <div>
+              <div title='John Doe' class='bsc-title'> John Doe
+              </div>
+              <div class='bsc-desc'> LearnSkills is an amazing platform with learned and skilled experts readily available for any blockers. The timings are apt in spite of time zone differences with proper planning and educative classes.
+              </div>
+            </div>
+            <div class='flex flex-between flex-align-end'>
+              <div>
+                <rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false">
+                </rating>
+                <div class='rating-desc'> Rated 4/5
+                </div>
+              </div>
+            </div>
+            <div class='absolute bsc-img'>
+              <img src='assets/images/review.jpg'>
+            </div>
+          </div>
+        </div>
+        <div class='flex flex-col each-course'>
+          <div class='courses-container user-reviews flex-grow relative star-ratings flex-between flex flex-col'>
+            <div>
+              <div title='John Doe' class='bsc-title'> John Doe
+              </div>
+              <div class='bsc-desc'> LearnSkills is an amazing platform with learned and skilled experts readily available for any blockers. The timings are apt in spite of time zone differences with proper planning and educative classes. I'd definitely give a 5 star to LearnSkills.
+              </div>
+            </div>
+            <div class='flex flex-between flex-align-end'>
+              <div>
+                <rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false">
+                </rating>
+                <div class='rating-desc'> Rated 5/5
+                </div>
+              </div>
+            </div>
+            <div class='absolute bsc-img'>
+              <img src='assets/images/review.jpg'>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -111,7 +258,9 @@
         <img class='pointer close-login' height='32px' width='32px' src='assets/icon/cross-red.svg'>
       </div>
       <div class='flex flex-col flex-align-center scroll'>
-        <div class='login-header'> <div>LOGIN</div> <div class='login-as-txt'>as</div>
+        <div class='login-header'>
+          <div>LOGIN</div>
+          <div class='login-as-txt'>as</div>
         </div>
         <div class='flex flex-align-center flex-center'>
           <div class='flex flex-align-center login-as-wrap' (click)="loginAs = 'expert'">

@@ -1,3 +1,4 @@
+
 * {
   letter-spacing: 0.3px;
 }
@@ -38,6 +39,10 @@
 
 .no-shrink {
   flex-shrink: 0;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
 
 .flex {
@@ -209,4 +214,24 @@ loader {
 ::selection {
   background: #222;
   color: #fff;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+}
+
+.star-ratings ul {
+  padding: 0px;
+  margin: 0px;
+
+  &.rating li {
+    padding: 5px 0px !important;
+    background: none;
+    color: #F8BD21;
+
+    ion-icon {
+      font-size: 18px;
+    }
+  }
 }
