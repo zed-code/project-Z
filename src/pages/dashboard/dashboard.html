@@ -1,0 +1,60 @@
+<div class='flex flex-col body-wrapper relative'>
+  <header class='header dashboard-header flex flex-align-center flex-between'>
+    <div class='flex flex-align-center flex-grow'>
+      <div class='header-logo'>
+        <span class='green-txt'>Learn</span><span class='dark-grey'>Skills</span>
+      </div>
+    </div>
+    <div class='flex flex-align-center'>
+      <div class='notifications-wrap'>
+      </div>
+      <div class='relative flex flex-align-center flex-center profile-head' [class.active]='showDropdown' (click)='showDropdown = !showDropdown' tabindex='1' (blur)='showDropdown=false;'>
+        <div class='user-initials'>JD</div>
+        <div class="absolute user-dropdown-wrap arrow_box" *ngIf='showDropdown'>
+          <div class='user-details flex flex-align-center' (click)='$event.stopPropagation();'>
+            <div class='flex flex-align-center flex-center'>
+              <img class='profile-pic' src='assets/icon/profile-picture.svg'>
+            </div>
+            <div>
+              <div class='each-detail'> John Doe
+              </div>
+              <div class='each-detail'> johndoe97@gmail.com
+              </div>
+            </div>
+          </div>
+          <div class='each-dd-row-wrap'>
+            <div class='each-dd-row' (click)='$event.stopPropagation(); ddSelected="myDashboard"; showDropdown = false;' [class.active]="ddSelected=='myDashboard'"> My Dashboard
+            </div>
+            <div class='each-dd-row' (click)='$event.stopPropagation(); ddSelected="myClients"; showDropdown = false;' [class.active]="ddSelected=='myClients'"> My Clients
+            </div>
+            <div class='each-dd-row' (click)='$event.stopPropagation(); ddSelected="myProfile"; showDropdown = false;' [class.active]="ddSelected=='myProfile'"> My Profile
+            </div>
+            <div class='each-dd-row' (click)='$event.stopPropagation(); logout();'> Logout
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class='body-content relative flex flex-col' *ngIf="ddSelected == 'myDashboard'">
+    <div class='my-performance-wrap'>
+      <div class='page-subheader'> My Stand
+      </div>
+      <div class='graph-wrap'>
+        <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType">
+        </canvas>
+      </div>
+    </div>
+    <div class='my-performance-wrap'>
+      <div class='page-subheader'> My Performance
+      </div>
+      <div class='graph-wrap'>
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class='body-content relative flex flex-col' *ngIf="ddSelected == 'myClients'">
+  </div>
+  <div class='body-content relative flex flex-col' *ngIf="ddSelected == 'myProfile'">
+  </div>
+</div>

@@ -213,6 +213,7 @@ input:focus {
   cursor: pointer;
   border-radius: 3px;
   transition: 0.2s ease;
+  user-select: none;
   margin-bottom: 32px;
   font-weight: normal;
   font-size: 18px;
@@ -695,4 +696,22 @@ section.best-selling-courses {
 
 .user-reviews.courses-container {
   background: rgba(1, 74, 124, 0.7);
+}
+
+.vibration {
+  animation: shake 0.299s ease;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  25%,
+  75% {
+    transform: translateX(3px);
+  }
+  50% {
+    transform: translateX(-3px);
+  }
 }

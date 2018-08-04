@@ -280,13 +280,13 @@
             </div>
           </div>
         </div>
-        <div class='input'>
-          <input type='text' placeholder='Email'>
+        <div class='input' [class.vibration]='loginFail'>
+          <input type='text' placeholder='Email' [(ngModel)]='email'>
         </div>
         <div class='input'>
-          <input type='password' placeholder='Password'>
+          <input type='password' [class.vibration]='loginFail' [(ngModel)]='password' placeholder='Password'>
         </div>
-        <div class='login-btn'> Login
+        <div class='login-btn' (click)='login()'> Login
         </div>
         <div class='forgot-password' (click)='sidebarState=2'> Create an account </div>
         <div class='forgot-password' (click)='sidebarState=3'> Forgot Password? </div>
