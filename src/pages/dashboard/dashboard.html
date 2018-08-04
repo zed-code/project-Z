@@ -36,20 +36,22 @@
       </div>
     </div>
   </header>
-  <div class='body-content relative flex flex-col' *ngIf="ddSelected == 'myDashboard'">
-    <div class='my-performance-wrap'>
-      <div class='page-subheader'> My Stand
+  <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myDashboard'">
+    <div class='flex no-shrink flex-wrap'>
+      <div class='my-performance-wrap half-width'>
+        <div class='page-subheader'> My Stand
+        </div>
+        <div class='graph-wrap'>
+          <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType">
+          </canvas>
+        </div>
       </div>
-      <div class='graph-wrap'>
-        <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType">
-        </canvas>
-      </div>
-    </div>
-    <div class='my-performance-wrap'>
-      <div class='page-subheader'> My Performance
-      </div>
-      <div class='graph-wrap'>
-        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+      <div class='my-performance-wrap half-width'>
+        <div class='page-subheader'> My Performance
+        </div>
+        <div class='graph-wrap'>
+          <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+        </div>
       </div>
     </div>
     <div class='my-performance-wrap'>
@@ -63,7 +65,7 @@
         <div class='slot-wrapper relative'>
           <div class='flex-grow each-hour relative' *ngFor='let time of daySchedule'></div>
           <div class='scheduled-slot absolute active'>
-          	<div>SELECTED</div>
+            <div>SELECTED</div>
           </div>
           <div class='scheduled-slot absolute' [ngStyle]="{'width': '12%', 'left': '70%'}">
           </div>
@@ -77,8 +79,8 @@
       </div>
     </div>
   </div>
-  <div class='body-content relative flex flex-col' *ngIf="ddSelected == 'myClients'">
+  <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myClients'">
   </div>
-  <div class='body-content relative flex flex-col' *ngIf="ddSelected == 'myProfile'">
+  <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myProfile'">
   </div>
 </div>

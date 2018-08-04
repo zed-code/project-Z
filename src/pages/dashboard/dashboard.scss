@@ -36,6 +36,9 @@
   height: 100%;
   overflow: auto;
   overflow-x: hidden;
+}
+
+.body-content.dashboard-pg {
   background-color: #f8f8f8;
   padding: 8px 28px;
 }
@@ -169,7 +172,7 @@ canvas {
   top: 0;
   bottom: 0;
   left: 20%;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
   width: 8%;
   background: #53b42d;
   z-index: 1;
@@ -216,8 +219,18 @@ canvas {
   transform: translateX(50%);
 }
 
+.half-width {
+  width: 50%;
+}
+
 @media only screen and (max-width: 767px) {
   .time-wrap:nth-child(even) {
     visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .half-width {
+    width: 100%;
   }
 }
