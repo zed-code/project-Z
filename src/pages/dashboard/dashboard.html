@@ -52,6 +52,30 @@
         <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
       </div>
     </div>
+    <div class='my-performance-wrap'>
+      <div class='page-subheader flex flex-between flex-align-center'>
+        <div>My Slots </div>
+        <div>
+          <ng-datepicker [options]='options' [(ngModel)]="date" (ngModelChange)='dateCalled($event)'></ng-datepicker>
+        </div>
+      </div>
+      <div class='slot-wrap relative'>
+        <div class='slot-wrapper relative'>
+          <div class='flex-grow each-hour relative' *ngFor='let time of daySchedule'></div>
+          <div class='scheduled-slot absolute active'>
+          	<div>SELECTED</div>
+          </div>
+          <div class='scheduled-slot absolute' [ngStyle]="{'width': '12%', 'left': '70%'}">
+          </div>
+        </div>
+        <div class='time-wrapper relative'>
+          <div class='flex-grow relative time-wrap' *ngFor='let time of daySchedule'>
+            <div class='absolute time-txt'>{{time}}:00</div>
+          </div>
+          <div class='absolute last-time-txt'>00:00</div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class='body-content relative flex flex-col' *ngIf="ddSelected == 'myClients'">
   </div>

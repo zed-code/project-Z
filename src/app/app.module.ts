@@ -7,6 +7,7 @@ import { LoaderComponent } from '../components/loader/loader';
 import { PortalApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { NgDatepickerModule } from 'ng2-datepicker';
 
 // ionic2-rating
 import { Ionic2RatingModule } from 'ionic2-rating';
@@ -24,6 +25,7 @@ import { ChartsModule } from 'ng2-charts';
     BrowserModule,
     Ionic2RatingModule,
     ChartsModule,
+    NgDatepickerModule,
     IonicModule.forRoot(PortalApp)
   ],
   bootstrap: [IonicApp],

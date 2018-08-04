@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { DatepickerOptions } from 'ng2-datepicker';
 
 @IonicPage()
 @Component({
@@ -13,6 +14,25 @@ export class DashboardPage {
   }
 
   ddSelected = 'myDashboard';
+  date = new Date();
+  daySchedule = [ '00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23' ];
+
+  options: DatepickerOptions = {
+	  minYear: 1970,
+	  maxYear: 2030,
+	  displayFormat: 'MMM D[,] YYYY',
+	  barTitleFormat: 'MMMM YYYY',
+	  dayNamesFormat: 'dd',
+	  firstCalendarDay: 0, // 0 - Sunday, 1 - Monday
+	  // minDate: new Date(Date.now()), 
+	  // maxDate: new Date(Date.now()),
+	  barTitleIfEmpty: 'Click to select a date',
+	  placeholder: 'Select date', // HTML input placeholder attribute (default: '')
+	  addClass: 'form-control', // Optional, value to pass on to [ngClass] on the input field
+	  addStyle: {}, // Optional, value to pass to [ngStyle] on the input field
+	  fieldId: 'my-date-picker', // ID to assign to the input field. Defaults to datepicker-<counter>
+	  useEmptyBarTitle: false, // Defaults to true. If set to false then barTitleIfEmpty will be disregarded and a date will always be shown 
+	};
 
   public lineChartData:Array<any> = [
 	  {data: [65, 59, 80, 81, 56, 55, 40], label: 'My Projects'},
@@ -103,6 +123,10 @@ export class DashboardPage {
 
 	logout() {
 	  	this.navCtrl.push(HomePage);
+	}
+
+	dateCalled(date) {
+		console.log('date', date);
 	}
 
 }

@@ -37,6 +37,7 @@
   overflow: auto;
   overflow-x: hidden;
   background-color: #f8f8f8;
+  padding: 8px 28px;
 }
 
 .user-dropdown-wrap {
@@ -86,62 +87,137 @@
 }
 
 .each-dd-row.active {
-	background: #0e5611;
-    color: #fff;
+  background: #0e5611;
+  color: #fff;
 }
 
 .profile-pic {
-	height: 28px;
-    width: 28px;
-    margin-right: 10px;
+  height: 28px;
+  width: 28px;
+  margin-right: 10px;
 }
 
-.arrow_box:after, .arrow_box:before {
-	bottom: 100%;
-	right: 8px;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
+.arrow_box:after,
+.arrow_box:before {
+  bottom: 100%;
+  right: 8px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
 }
 
 .arrow_box:after {
-	border-color: rgba(255, 255, 255, 0);
-	border-bottom-color: #fff;
-	border-width: 8px;
-	margin-left: -8px;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff;
+  border-width: 8px;
+  margin-left: -8px;
 }
+
 .arrow_box:before {
-	border-color: rgba(204, 204, 204, 0);
-	border-bottom-color: #ccc;
-	border-width: 9px;
-	margin-left: -9px;
+  border-color: rgba(204, 204, 204, 0);
+  border-bottom-color: #ccc;
+  border-width: 9px;
+  margin-left: -9px;
 }
 
 .profile-head.active {
-	background: #f3f3f3;
-}
-
-.body-content {
-	padding: 22px 28px;
+  background: #f3f3f3;
 }
 
 .my-performance-wrap {
-	padding: 10px 0px;
+  padding: 16px 8px;
+  border-bottom: 1px solid #e3e3e3;
+  position: relative;
 }
 
 .page-subheader {
-	padding-bottom: 28px;
-	font-size: 20px;
+  padding-bottom: 28px;
+  color: #333;
+  font-size: 18px;
 }
 
 canvas {
-	width: 100%!important;
-	height: 100%!important;
+  width: 100%!important;
+  height: 100%!important;
 }
 
 .graph-wrap {
-    height: 340px;
+  height: 340px;
+}
+
+.slot-wrapper {
+  height: 20px;
+  overflow: hidden;
+  background: #eee;
+  display: flex;
+}
+
+.ngx-datepicker-container .ngx-datepicker-calendar-container {
+  right: 0;
+  left: initial!important;
+  z-index: 2;
+}
+
+.ngx-datepicker-container .ngx-datepicker-input {
+  color: #464646;
+}
+
+.scheduled-slot {
+  top: 0;
+  bottom: 0;
+  left: 20%;
+  transition: 0.2s ease;
+  width: 8%;
+  background: #53b42d;
+  z-index: 1;
+  cursor: pointer;
+  border: 2px solid #53b42d;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  text-shadow: 0.2px 0;
+}
+
+.scheduled-slot.active {
+  border: 2px solid #3b831e;
+}
+
+.slot-wrap {
+  min-height: 300px;
+}
+
+.each-hour {
+  border: 0.5px solid #dcdcdc;
+}
+
+.time-wrapper {
+  width: 100%;
+  height: 12px;
+  display: flex;
+  font-size: 8px;
+  color: #666;
+}
+
+.time-txt {
+  top: 4px;
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.last-time-txt {
+  top: 4px;
+  right: 0;
+  transform: translateX(50%);
+}
+
+@media only screen and (max-width: 767px) {
+  .time-wrap:nth-child(even) {
+    visibility: hidden;
+  }
 }
