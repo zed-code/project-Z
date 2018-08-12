@@ -45,12 +45,36 @@
           <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType">
           </canvas>
         </div>
+        <div class='flex flex-center flex-align-center legends-wrap'>
+          <div class='flex flex-align-center each-legend'>
+            <div class='legend-box'>
+            </div>
+            <div class='legend-label'> Label A</div>
+          </div>
+          <div class='flex flex-align-center each-legend'>
+            <div class='legend-box'>
+            </div>
+            <div class='legend-label'> Label B</div>
+          </div>
+        </div>
       </div>
       <div class='my-performance-wrap half-width'>
         <div class='page-subheader'> My Performance
         </div>
         <div class='graph-wrap'>
           <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType"></canvas>
+        </div>
+        <div class='flex flex-center flex-align-center legends-wrap'>
+          <div class='flex flex-align-center each-legend'>
+            <div class='legend-box'>
+            </div>
+            <div class='legend-label'> Label A</div>
+          </div>
+          <div class='flex flex-align-center each-legend'>
+            <div class='legend-box'>
+            </div>
+            <div class='legend-label'> Label B</div>
+          </div>
         </div>
       </div>
     </div>
@@ -64,10 +88,8 @@
       <div class='slot-wrap relative'>
         <div class='slot-wrapper relative'>
           <div class='flex-grow each-hour relative' *ngFor='let time of daySchedule'></div>
-          <div class='scheduled-slot absolute active'>
-            <div>SELECTED</div>
-          </div>
-          <div class='scheduled-slot absolute' [ngStyle]="{'width': '12%', 'left': '70%'}">
+          <div class='scheduled-slot absolute' [ngStyle]="{'width': clients.width, 'left': clients.left}" (click)='selectedClient = i; ' [class.active]='selectedClient == i' *ngFor='let clients of clientScheduled; let i = index; '>
+            <div *ngIf="selectedClient == i" class='selected-tag'>SELECTED</div>
           </div>
         </div>
         <div class='time-wrapper relative'>
@@ -75,6 +97,28 @@
             <div class='absolute time-txt'>{{time}}:00</div>
           </div>
           <div class='absolute last-time-txt'>00:00</div>
+        </div>
+        <div class='flex flex-col client-schedule-wrap'>
+          <div class='each-client flex flex-align-center'>
+            <div class='subhead-txt'>Client Name:</div>
+            <div class='subtext-desc'> {{clientScheduled[selectedClient].clientName}} </div>
+          </div>
+          <div class='each-client flex flex-align-center'>
+            <div class='subhead-txt'>Session On:</div>
+            <div class='subtext-desc'> {{clientScheduled[selectedClient].sessionOn}} </div>
+          </div>
+          <div class='each-client flex flex-align-center'>
+            <div class='subhead-txt'>Session Start:</div>
+            <div class='subtext-desc'> {{clientScheduled[selectedClient].clientStart}} </div>
+          </div>
+          <div class='each-client flex flex-align-center'>
+            <div class='subhead-txt'>Session End:</div>
+            <div class='subtext-desc'> {{clientScheduled[selectedClient].cliendEnd}} </div>
+          </div>
+          <div class='each-client flex flex-align-center'>
+            <div class='subhead-txt'>Session Duration:</div>
+            <div class='subtext-desc'> {{clientScheduled[selectedClient].sessionDuration}} </div>
+          </div>
         </div>
       </div>
     </div>

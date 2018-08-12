@@ -13,6 +13,28 @@ export class DashboardPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  selectedClient = 0;
+  clientScheduled = [
+  	{
+  		clientName: 'John Doe',
+  		clientStart: '12:00 PM',
+  		cliendEnd: '1.30 PM',
+  		sessionDuration: '90 Minutes',
+  		sessionOn: 'Java 6 Technology & Concepts',
+  		left: '50%',
+  		width: '6%'
+  	},
+  	{
+  		clientName: 'Kevin Snow',
+  		clientStart: '3:00 PM',
+  		cliendEnd: '4.00 PM',
+  		sessionDuration: '60 Minutes',
+  		sessionOn: 'Angular 6 Technology & Concepts',
+  		left: '62.5%',
+  		width: '4.5%'
+  	}
+  ]
+
   ddSelected = 'myDashboard';
   date = new Date();
   daySchedule = [ '00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23' ];

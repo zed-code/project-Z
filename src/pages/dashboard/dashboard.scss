@@ -152,8 +152,7 @@ canvas {
 }
 
 .slot-wrapper {
-  height: 20px;
-  overflow: hidden;
+  height: 20px; // overflow: hidden;
   background: #eee;
   display: flex;
 }
@@ -171,9 +170,9 @@ canvas {
 .scheduled-slot {
   top: 0;
   bottom: 0;
-  left: 20%;
+  left: 0%;
   transition: 0.3s ease;
-  width: 8%;
+  width: 0%;
   background: #53b42d;
   z-index: 1;
   cursor: pointer;
@@ -189,10 +188,6 @@ canvas {
 
 .scheduled-slot.active {
   border: 2px solid #3b831e;
-}
-
-.slot-wrap {
-  min-height: 300px;
 }
 
 .each-hour {
@@ -221,6 +216,57 @@ canvas {
 
 .half-width {
   width: 50%;
+}
+
+.client-schedule-wrap {
+  padding: 24px 12px 12px;
+}
+
+.subhead-txt {
+  text-shadow: 0.2px 0;
+  padding-right: 18px;
+  min-width: 140px;
+  line-height: 1.4;
+}
+
+.each-client {
+  padding: 8px 0px;
+}
+
+.selected-tag {
+  transform: translate(-50%, -140%);
+  top: 0;
+  left: 50%;
+  color: #3c3c3c;
+  position: absolute;
+  font-size: 9px;
+  letter-spacing: 0.6px;
+}
+
+.legend-box {
+  width: 20px;
+  height: 16px;
+  background: #8abfae;
+  margin-right: 8px;
+  border: 1px solid #a8a8a8;
+}
+
+.each-legend {
+	padding: 0 10px;
+}
+
+.legend-label {
+    font-size: 12px;
+}
+
+.legends-wrap {
+	padding-top: 14px;
+}
+
+.subtext-desc {
+    line-height: 1.4;
+    color: #222;
+    font-size: 14px;
 }
 
 @media only screen and (max-width: 767px) {
