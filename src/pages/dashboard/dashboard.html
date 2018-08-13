@@ -124,6 +124,28 @@
     </div>
   </div>
   <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myClients'">
+    <div class='tabs-wrap flex flex-align-center'>
+      <div class='each-tab' [class.active]="activeClients == 0" (click)="activeClients = 0">Active Clients
+      </div>
+      <div class='each-tab' [class.active]="activeClients == 1" (click)="activeClients = 1">History
+      </div>
+    </div>
+    <div class='flex client-carousel-wrap' [ngStyle]="{'transform': 'translateX(' + -100 * activeClients + '%)'}">
+      <div class='each-client-carousel no-shrink flex flex-col flex-grow'>
+        <div class='flex flex-grow flex-col client-carousel-content'>
+          <div class='each-client-row'></div>
+          <div class='each-client-row'></div>
+          <div class='each-client-row'></div>
+        </div>
+      </div>
+      <div class='each-client-carousel no-shrink flex flex-col flex-grow'>
+        <div class='flex flex-grow flex-col client-carousel-content'>
+          <div class='each-client-row'></div>
+          <div class='each-client-row'></div>
+          <div class='each-client-row'></div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myProfile'">
   </div>
