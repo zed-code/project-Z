@@ -132,12 +132,18 @@
 
 .my-performance-wrap {
   padding: 16px 8px;
-  border-bottom: 1px solid #e3e3e3;
   position: relative;
+  .button {
+    margin: 8px 0px 8px 12px;
+  }
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e3e3e3;
 }
 
 .page-subheader {
-  padding-bottom: 28px;
+  padding-bottom: 20px;
   color: #333;
   font-size: 18px;
 }
@@ -158,13 +164,19 @@ canvas {
 }
 
 .ngx-datepicker-container .ngx-datepicker-calendar-container {
-  right: 0;
-  left: initial!important;
+  left: 50%!important;
+  transform: translateX(-50%);
   z-index: 2;
 }
 
 .ngx-datepicker-container .ngx-datepicker-input {
   color: #464646;
+}
+
+.apply-leave {
+  .subhead-txt {
+    padding-bottom: 8px;
+  }
 }
 
 .scheduled-slot {
@@ -219,7 +231,7 @@ canvas {
 }
 
 .client-schedule-wrap {
-  padding: 24px 12px 12px;
+  padding: 24px 12px 24px;
 }
 
 .subhead-txt {
@@ -301,23 +313,128 @@ canvas {
 }
 
 .client-carousel-content {
-	overflow: auto;
-	padding: 0px 12px;
+  overflow: auto;
+  padding: 0px 12px;
 }
 
 .each-client-row {
-	min-height: 100px;
-    background: #fff;
-    border-radius: 2px;
-    margin: 10px 0;
-    flex-shrink: 0;
-    border: 1px solid #eee;
-    padding: 12px 15px;
+  min-height: 100px;
+  background: #fff;
+  border-radius: 2px;
+  margin: 10px 0;
+  flex-shrink: 0;
+  border: 1px solid #eee;
+  padding: 12px 15px;
+  flex-flow: wrap;
+  display: flex;
+  align-items: center;
+}
+
+.client-name {
+  padding: 4px 3%;
+  width: 50%; // min-height: 40px;
+}
+
+.button {
+  color: white;
+  background: #0e5611;
+  padding: 7px 8px;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 120px;
+}
+
+.dark-red.button {
+  background: darkred;
+}
+
+.dark-blue.button {
+  background: #132790;
+}
+
+.btn-left {
+  padding-right: 8px;
+}
+
+.add-client-pop {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 70vw;
+  margin: auto;
+  height: 66vh;
+  z-index: 6;
+  background: #fafafa;
+  overflow: hidden;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+  max-width: 767px;
+  max-height: 767px;
+  .button-wrap {
+    padding: 14px 30px;
+  }
+  .subhead-txt {
+    padding-bottom: 8px;
+  }
+}
+
+.privacy-content {
+  overflow: auto;
+}
+
+.profile-header-wrapper {
+  padding-top: 6px;
+  align-items: flex-start;
+  .page-subheader {
+    padding-top: 8px;
+  }
+}
+
+.profile-details-wrap {
+  .subhead-txt {
+    padding-bottom: 8px;
+  }
+}
+
+.input input.disabled {
+  background: #ededed;
+  color: #666;
+}
+
+.add-slot-wrap {
+  // min-height: 300px;
+  .subhead-txt {
+    padding-bottom: 8px;
+  }
+}
+
+.ngx-dorpdown-container {
+  margin-bottom: 24px;
+}
+
+.sibling-inputs input {
+  margin-left: 8px;
+}
+
+.sibling-inputs input:first-child {
+  margin-left: 0px;
 }
 
 @media only screen and (max-width: 767px) {
   .time-wrap:nth-child(even) {
     visibility: hidden;
+  }
+  .client-name {
+    width: 100%;
+    padding: 4px 10px;
   }
 }
 

@@ -1,4 +1,3 @@
-
 * {
   letter-spacing: 0.3px;
 }
@@ -151,7 +150,7 @@
 }
 
 body {
-	user-select: auto;
+  user-select: auto;
 }
 
 @keyframes ball-scale-ripple-multiple {
@@ -224,7 +223,6 @@ input {
 .star-ratings ul {
   padding: 0px;
   margin: 0px;
-
   &.rating li {
     padding: 5px 0px !important;
     background: none;
@@ -234,4 +232,52 @@ input {
       font-size: 18px;
     }
   }
+}
+
+ng-datepicker {
+  width: 100%;
+}
+
+.ngx-datepicker-container {
+  height: 100%;
+  .ngx-datepicker-input {
+    border: 1px solid #ccc!important;
+    width: 100%!important;
+  }
+}
+
+.available-items li,
+.ngx-dropdown-button,
+.selected-items li {
+  text-transform: capitalize;
+}
+
+.available-items li:hover {
+  background: #ededed;
+}
+
+hr {
+  display: none;
+}
+
+.ngx-dorpdown-container .ngx-dropdown-list-container {
+  max-height: 240px;
+  ul {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.ngx-dorpdown-container .ngx-dropdown-button {
+  min-height: 36px!important;
+  font-size: 14px;
+  color: #333;
+}
+
+.selected-items {
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+}
+
+ngx-select-dropdown {
+  width: 100%;
 }

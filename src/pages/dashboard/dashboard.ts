@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { DatepickerOptions } from 'ng2-datepicker';
@@ -8,13 +8,24 @@ import { DatepickerOptions } from 'ng2-datepicker';
   selector: 'page-dashboard',
   templateUrl: 'dashboard.html',
 })
-export class DashboardPage {
+export class DashboardPage implements OnInit {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   selectedClient = 0;
+  addClient = 0;
+  rate = 4.5;
+  profileEditMode = false;
+  badrate = 1;
   activeClients = 0;
+  
+  profileDetails = {
+  	name: 'John Doe',
+  	contact: '8734659846',
+  	details: 'Details is pre-filled',
+  	moreDetails: 'More details is pre-filled'
+  }
   clientScheduled = [
   	{
   		clientName: 'John Doe',
@@ -34,9 +45,14 @@ export class DashboardPage {
   		left: '62.5%',
   		width: '4.5%'
   	}
-  ]
+  ];
 
-  ddSelected = 'myClients';
+  dropdownOptions = ['john doe', 'james walker', 'andrew stone'];
+  config;
+  dataModel;
+
+
+  ddSelected = 'myDashboard';
   date = new Date();
   daySchedule = [ '00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23' ];
 
@@ -143,6 +159,19 @@ export class DashboardPage {
 	  {data: [65, 59, 80, 81, 56, 55, 40], label: 'My Projects'},
 	  {data: [98, 68, 90, 99, 76, 87, 90], label: 'Month Highest'}
 	];
+
+	ngOnInit() {
+		this.config = {
+        displayKey:"List of all clients", //if objects array passed which key to be displayed defaults to description
+        search:true, //true/false for the search functionlity defaults to false,
+        height: 'auto', //height of the list so that if there are more no of items it can show a scroll defaults to auto. With auto height scroll will never appear
+        placeholder:'Select Client' // text to be displayed when no item is selected defaults to Select,
+      }
+	}
+
+	selectionChanged(event) {
+		console.log(event);
+	}
 
 	logout() {
 	  	this.navCtrl.push(HomePage);

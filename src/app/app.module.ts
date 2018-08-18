@@ -13,7 +13,8 @@ import { NgDatepickerModule } from 'ng2-datepicker';
 import { Ionic2RatingModule } from 'ionic2-rating';
 // ng2 charts
 import { ChartsModule } from 'ng2-charts';
-
+// ng select dropdown
+import { SelectDropDownModule } from 'ngx-select-dropdown'
 @NgModule({
   declarations: [
     PortalApp,
@@ -25,6 +26,7 @@ import { ChartsModule } from 'ng2-charts';
     BrowserModule,
     Ionic2RatingModule,
     ChartsModule,
+    SelectDropDownModule,
     NgDatepickerModule,
     IonicModule.forRoot(PortalApp)
   ],

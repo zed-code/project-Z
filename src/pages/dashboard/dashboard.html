@@ -37,7 +37,7 @@
     </div>
   </header>
   <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myDashboard'">
-    <div class='flex no-shrink flex-wrap'>
+    <div class='flex no-shrink flex-wrap border-bottom'>
       <div class='my-performance-wrap half-width'>
         <div class='page-subheader'> My Stand
         </div>
@@ -81,8 +81,9 @@
     <div class='my-performance-wrap'>
       <div class='page-subheader flex flex-between flex-align-center'>
         <div>My Slots </div>
-        <div>
+        <div class="flex flex-align-center">
           <ng-datepicker [options]='options' [(ngModel)]="date" (ngModelChange)='dateCalled($event)'></ng-datepicker>
+          <div class="button">MANAGE SLOTS</div>
         </div>
       </div>
       <div class='slot-wrap relative'>
@@ -120,33 +121,265 @@
             <div class='subtext-desc'> {{clientScheduled[selectedClient].sessionDuration}} </div>
           </div>
         </div>
+        <div class="flex flex-col">
+          <div class="page-subheader">Add Slot</div>
+          <div class="add-slot-wrap flex flex-wrap">
+            <div class='client-name flex-col flex'>
+              <div class='subhead-txt'>Select Client:</div>
+              <ngx-select-dropdown (change)="selectionChanged($event)" [multiple]="false" [(value)]="dataModel" [config]="config" [options]="dropdownOptions"></ngx-select-dropdown>
+            </div>
+            <div class="client-name">
+              <div class='subhead-txt'>Session On:</div>
+              <div class="input flex">
+                <input placeholder="Session On" type="text">
+              </div>
+            </div>
+            <div class="client-name">
+              <div class='subhead-txt'>Session Start:</div>
+              <div class="input flex sibling-inputs">
+                <input placeholder="HH" type="number">
+                <input placeholder="MM" type="number">
+              </div>
+            </div>
+            <div class="client-name">
+              <div class='subhead-txt'>Session End:</div>
+              <div class="input flex sibling-inputs">
+                <input placeholder="HH" type="number">
+                <input placeholder="MM" type="number">
+              </div>
+            </div>
+            <div class="client-name">
+              <div class='subhead-txt'>Session Date:</div>
+              <div class="input flex">
+                <ng-datepicker [options]='options' [(ngModel)]="date" (ngModelChange)='dateCalled($event)'></ng-datepicker>
+              </div>
+            </div>
+            <div class="client-name">
+              <div class='subhead-txt'>Session Duration:</div>
+              <div class="input flex">
+                <input placeholder="(In Minutes)" type="number">
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-end flex-align-center">
+            <div class="button">ADD SLOT</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myClients'">
-    <div class='tabs-wrap flex flex-align-center'>
-      <div class='each-tab' [class.active]="activeClients == 0" (click)="activeClients = 0">Active Clients
+    <div class='fixed overlay-bg' [class.active]='addClient' (click)='addClient=0;'></div>
+    <div class='fixed add-client-pop flex flex-col' *ngIf='addClient > 0'>
+      <div class="popup-header flex flex-between flex-align-center">
+        <div>Add Client</div>
+        <img (click)='addClient = 0;' class="pointer close-login" height="25px" src="assets/icon/cross-white.svg" width="25px">
       </div>
-      <div class='each-tab' [class.active]="activeClients == 1" (click)="activeClients = 1">History
+      <div class='flex flex-col flex-grow privacy-content'>
+        <div class='subhead-txt'>Client Name:</div>
+        <div class="input flex">
+          <input placeholder="Enter Name" type="text">
+        </div>
+        <div class='subhead-txt'>Client Contact Number:</div>
+        <div class="input flex">
+          <input placeholder="Enter Contact Number" type="text">
+        </div>
+        <div class='subhead-txt'>Client Location:</div>
+        <div class="input flex">
+          <input placeholder="Location" type="text">
+        </div>
       </div>
+      <div class="flex-align-center flex flex-end button-wrap">
+        <div (click)='addClient = 0;' class="button dark-blue">ADD</div>
+      </div>
+    </div>
+    <div class='tabs-wrap flex flex-align-center flex-between'>
+      <div class="flex flex-align-center">
+        <div class='each-tab' [class.active]="activeClients == 0" (click)="activeClients = 0">Active Clients
+        </div>
+        <div class='each-tab' [class.active]="activeClients == 1" (click)="activeClients = 1">History
+        </div>
+      </div>
+      <div class="button" (click)='addClient = 1;'>ADD CLIENT</div>
     </div>
     <div class='flex client-carousel-wrap' [ngStyle]="{'transform': 'translateX(' + -100 * activeClients + '%)'}">
       <div class='each-client-carousel no-shrink flex flex-col flex-grow'>
         <div class='flex flex-grow flex-col client-carousel-content'>
-          <div class='each-client-row'></div>
-          <div class='each-client-row'></div>
-          <div class='each-client-row'></div>
+          <div class='each-client-row'>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Client Name:</div>
+              <div>John Doe</div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Course:</div>
+              <div>Java 6 Technologies</div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Priority:</div>
+              <div>High</div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Quotient:</div>
+              <div>
+                <img height="26px" width="26px" src='assets/images/happy.png'>
+              </div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Status:</div>
+              <div class='flex flex-between flex-align-center flex-grow flex-wrap'>
+                <div class='btn-left'>Overdue</div>
+                <div class='button dark-red'>Request Payment</div>
+              </div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Rating:</div>
+              <div class='flex flex-between flex-align-center flex-grow flex-wrap'>
+                <!-- <div class='btn-left'>Unrated</div> -->
+                <div class="star-ratings">
+                  <rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false">
+                  </rating>
+                </div>
+                <!-- <div class='button'>Request Rating</div> -->
+              </div>
+            </div>
+          </div>
+          <div class='each-client-row'>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Client Name:</div>
+              <div>James Cameroom</div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Course:</div>
+              <div>Angular 6 Technologies</div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Priority:</div>
+              <div>Medium</div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Quotient:</div>
+              <div>
+                <img height="26px" width="26px" src='assets/images/medium.png'>
+              </div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Status:</div>
+              <div class='flex flex-between flex-align-center flex-grow flex-wrap'>
+                <div class='btn-left'>Onboard</div>
+                <!-- <div class='button dark-red'>Request Payment</div> -->
+              </div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Rating:</div>
+              <div class='flex flex-between flex-align-center flex-grow flex-wrap'>
+                <div class='btn-left'>Unrated</div>
+                <!--                 <div class="star-ratings">
+                  <rating [(ngModel)]="rate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false">
+                  </rating>
+                </div> -->
+                <div class='button'>Request Rating</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class='each-client-carousel no-shrink flex flex-col flex-grow'>
         <div class='flex flex-grow flex-col client-carousel-content'>
-          <div class='each-client-row'></div>
-          <div class='each-client-row'></div>
-          <div class='each-client-row'></div>
+          <div class='each-client-row'>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Client Name:</div>
+              <div>John Doe</div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Course:</div>
+              <div>Java 6 Technologies</div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Priority:</div>
+              <div>High</div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Quotient:</div>
+              <div>
+                <img height="26px" width="26px" src='assets/images/angry.png'>
+              </div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Status:</div>
+              <div class='flex flex-between flex-align-center flex-grow flex-wrap'>
+                <div class='btn-left'>Blocked</div>
+                <!-- <div class='button dark-red'>Request Payment</div> -->
+              </div>
+            </div>
+            <div class='client-name flex flex-align-center'>
+              <div class='subhead-txt'>Rating:</div>
+              <div class='flex flex-between flex-align-center flex-grow flex-wrap'>
+                <!-- <div class='btn-left'>Unrated</div> -->
+                <div class="star-ratings">
+                  <rating [(ngModel)]="badrate" readOnly="true" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star" nullable="false">
+                  </rating>
+                </div>
+                <!-- <div class='button'>Request Rating</div> -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myProfile'">
+    <div class='profile-header-wrapper flex flex-between'>
+      <div class="page-subheader">My Profile</div>
+      <div class="button" (click)='profileEditMode = !profileEditMode'><span *ngIf='!profileEditMode'>EDIT</span><span *ngIf='profileEditMode'>SAVE</span></div>
+    </div>
+    <div class="profile-details-wrap flex flex-wrap">
+      <div class="client-name">
+        <div class='subhead-txt'>Name:</div>
+        <div class="input flex">
+          <input [class.disabled]='!profileEditMode' [disabled]='!profileEditMode' [(ngModel)]='profileDetails.name' placeholder="Enter Full Name" type="text">
+        </div>
+      </div>
+      <div class="client-name">
+        <div class='subhead-txt'>Contact:</div>
+        <div class="input flex">
+          <input [class.disabled]='!profileEditMode' [disabled]='!profileEditMode' [(ngModel)]='profileDetails.contact' placeholder="Enter Contact Number" type="text">
+        </div>
+      </div>
+      <div class="client-name">
+        <div class='subhead-txt'>Detail 1:</div>
+        <div class="input flex">
+          <input [class.disabled]='!profileEditMode' [disabled]='!profileEditMode' [(ngModel)]='profileDetails.details' placeholder="Enter Detail 1" type="text">
+        </div>
+      </div>
+      <div class="client-name">
+        <div class='subhead-txt'>Detail 2:</div>
+        <div class="input flex">
+          <input [class.disabled]='!profileEditMode' [disabled]='!profileEditMode' [(ngModel)]='profileDetails.moreDetails' placeholder="Enter More Details" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="apply-leave flex flex-col">
+      <div class='flex flex-between'>
+        <div class="page-subheader">Apply Leave</div>
+        <div class="button">MANAGE LEAVES</div>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="client-name">
+          <div class='subhead-txt'>Select Date:</div>
+          <div class="input flex">
+            <ng-datepicker [options]='options' [(ngModel)]="date" (ngModelChange)='dateCalled($event)'></ng-datepicker>
+          </div>
+        </div>
+        <div class="client-name">
+          <div class='subhead-txt'>Reason:</div>
+          <div class="input flex">
+            <input placeholder="Enter Reason For Leave" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-align-center flex-center">
+      	<div class="button">APPLY</div>
+      </div>
+    </div>
   </div>
 </div>
