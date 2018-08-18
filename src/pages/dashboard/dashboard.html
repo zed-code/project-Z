@@ -37,6 +37,14 @@
     </div>
   </header>
   <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myDashboard'">
+    <div class='fixed privacy-popup flex flex-col' *ngIf='manageSlots > 0'>
+      <div class="popup-header flex flex-between flex-align-center">
+        <div>Manage Slots</div>
+        <img (click)='manageSlots = 0;' class="pointer close-login" height="25px" src="assets/icon/cross-white.svg" width="25px">
+      </div>
+      <div class='flex flex-col flex-grow privacy-content'>
+      </div>
+    </div>
     <div class='flex no-shrink flex-wrap border-bottom'>
       <div class='my-performance-wrap half-width'>
         <div class='page-subheader'> My Stand
@@ -83,7 +91,7 @@
         <div>My Slots </div>
         <div class="flex flex-align-center">
           <ng-datepicker [options]='options' [(ngModel)]="date" (ngModelChange)='dateCalled($event)'></ng-datepicker>
-          <div class="button">MANAGE SLOTS</div>
+          <div (click)='manageSlots = 1;' class="button">MANAGE SLOTS</div>
         </div>
       </div>
       <div class='slot-wrap relative'>
@@ -169,7 +177,6 @@
     </div>
   </div>
   <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myClients'">
-    <div class='fixed overlay-bg' [class.active]='addClient' (click)='addClient=0;'></div>
     <div class='fixed add-client-pop flex flex-col' *ngIf='addClient > 0'>
       <div class="popup-header flex flex-between flex-align-center">
         <div>Add Client</div>
@@ -328,6 +335,14 @@
     </div>
   </div>
   <div class='body-content relative flex flex-col dashboard-pg' *ngIf="ddSelected == 'myProfile'">
+    <div class='fixed privacy-popup flex flex-col' *ngIf='manageLeaves > 0'>
+      <div class="popup-header flex flex-between flex-align-center">
+        <div>Manage Leaves</div>
+        <img (click)='manageLeaves = 0;' class="pointer close-login" height="25px" src="assets/icon/cross-white.svg" width="25px">
+      </div>
+      <div class='flex flex-col flex-grow privacy-content'>
+      </div>
+    </div>
     <div class='profile-header-wrapper flex flex-between'>
       <div class="page-subheader">My Profile</div>
       <div class="button" (click)='profileEditMode = !profileEditMode'><span *ngIf='!profileEditMode'>EDIT</span><span *ngIf='profileEditMode'>SAVE</span></div>
@@ -361,7 +376,7 @@
     <div class="apply-leave flex flex-col">
       <div class='flex flex-between flex-align-start'>
         <div class="page-subheader">Apply Leave</div>
-        <div class="button">MANAGE LEAVES</div>
+        <div (click)='manageLeaves = 1; ' class="button">MANAGE LEAVES</div>
       </div>
       <div class="flex flex-wrap">
         <div class="client-name">
@@ -378,8 +393,9 @@
         </div>
       </div>
       <div class="flex flex-align-center flex-center">
-      	<div class="button">APPLY</div>
+        <div class="button">APPLY</div>
       </div>
     </div>
   </div>
+  <div class='fixed overlay-bg' [class.active]='addClient || manageSlots || manageLeaves' (click)='addClient = 0; manageSlots = 0; manageLeaves = 0; '></div>
 </div>
